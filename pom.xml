@@ -27,7 +27,7 @@
     </parent>
     <groupId>com.madgag</groupId>
     <artifactId>android-pinned-header-listviews</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
     <packaging>apklib</packaging>
     <name>Android Pinned-Header ListViews</name>
     <description>Small library providing pinned headers for ExpandableListViews</description>
