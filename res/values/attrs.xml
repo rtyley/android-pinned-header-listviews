@@ -23,4 +23,3 @@
         <attr name="shadowDrawable" format="reference"/>
     </declare-styleable>
 </resources>
-

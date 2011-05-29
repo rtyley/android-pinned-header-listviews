@@ -30,9 +30,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
+import static com.madgag.android.listviews.pinnedheader.R.drawable.shadow;
+import static com.madgag.android.listviews.pinnedheader.R.styleable.PinnedHeaderLayout_shadowDrawable;
+
 public class PinnedHeaderLayout extends ViewGroup implements PinnedHeaderTrait.HeaderViewGroupAttacher {
 
-    private Drawable shadowDrawable; // getResources().getDrawable(R.drawable.black_white_gradient);
+    private Drawable shadowDrawable;
     private static final String TAG = "PHL";
 
     private PinnedHeaderTrait pinnedHeaderTrait;
@@ -45,7 +48,10 @@ public class PinnedHeaderLayout extends ViewGroup implements PinnedHeaderTrait.H
         super(context, attrs);
 
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.PinnedHeaderLayout);
-        shadowDrawable=typedArray.getDrawable(R.styleable.PinnedHeaderLayout_shadowDrawable);
+        shadowDrawable=typedArray.getDrawable(PinnedHeaderLayout_shadowDrawable);
+        if (shadowDrawable==null) {
+            shadowDrawable = getResources().getDrawable(shadow);
+        }
     }
 
     @Override
